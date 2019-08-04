@@ -2,44 +2,45 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import Intro from "./Intro"
+import "./styles.css"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { isHome, heading, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
-    if (location.pathname === rootPath) {
+    if (isHome) {
       header = (
-        <h1
-          style={{
-            ...scale(1.2),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-            {title}
-        </h1>
+        <div>
+          <h1
+            style={{
+              ...scale(1.2),
+              marginBottom: rhythm(1.5),
+              marginTop: 0,
+            }}
+          >
+            {heading}
+          </h1>
+          <Intro />
+        </div>
       )
     } else {
       header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
+        <div>
+          <Link to={`/`}>⟵ to main</Link>
+          <h1
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
+              ...scale(1.2),
+              marginBottom: rhythm(1.5),
+              marginTop: 0,
             }}
-            to={`/`}
           >
-            {title}
-          </Link>
-        </h3>
+            {heading}
+          </h1>
+          <Intro />
+        </div>
       )
     }
     return (
@@ -53,11 +54,6 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, 
-          {` `}
-          <a href="https://www.hawaiichee.com">HawaiiChee</a>
-        </footer>
       </div>
     )
   }

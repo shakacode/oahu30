@@ -1,23 +1,27 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 
 class Index extends React.Component {
   render() {
-    const faq = this.props.data.faq
     const siteTitle = this.props.data.site.siteMetadata.title
 
     return (
-      <Layout location={this.props.location} title={faq.frontmatter.title}>
-        <SEO
-          title={faq.frontmatter.title}
-          description={faq.frontmatter.description}
-        />
-        <MDXRenderer>{faq.body}</MDXRenderer>
+      <Layout isHome heading={siteTitle}>
+        <SEO title={siteTitle} description={`todo`} />
+        <ul>
+          <li>
+            <Link to="/faq-for-hosts">FAQ for Hosts</Link>
+          </li>
+          <li>
+            <Link to="/faq-for-guests">FAQ for Guests</Link>
+          </li>
+          <li>
+            <Link to="/faq-for-businesses">FAQ for Businesses</Link>
+          </li>
+        </ul>
       </Layout>
     )
   }
@@ -30,15 +34,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
-      }
-    }
-    faq: mdx(frontmatter: { slug: { eq: "faq" } }) {
-      id
-      body
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
       }
     }
   }
