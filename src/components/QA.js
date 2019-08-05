@@ -11,7 +11,7 @@ function QA({ question, answer, onToggle }) {
       <strong
         {...getToggleProps({
           onClick: () => {
-            onToggle(!isOpen)
+            // onToggle(!isOpen)
           },
         })}
         className={css.question}
