@@ -3,6 +3,8 @@ import { Link, graphql } from "gatsby"
 
 import Faq from "../components/Faq"
 
+import { getQuesions } from "../utils/faqParser"
+
 class FaqForHosts extends React.Component {
   render() {
     const { body } = this.props.data.faq;
@@ -12,8 +14,7 @@ class FaqForHosts extends React.Component {
       <Faq
         title={title}
         heading={heading}
-        // description={description}
-        // questions={questions}
+        questions={getQuesions(this.props.data.faq.mdxAST.children)}
         body={body}
       />
     )
@@ -27,6 +28,7 @@ export const pageQuery = graphql`
     faq: mdx(frontmatter: { slug: { eq: "faq-for-hosts" } }) {
       id
       body
+      mdxAST
       frontmatter {
         title
         heading
