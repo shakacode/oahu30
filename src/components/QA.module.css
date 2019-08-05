@@ -1,0 +1,14 @@
+.QA {
+  margin-bottom: 30px;
+}
+
+.question {
+  display: block;
+  margin-bottom: 10px;
+  -webkit-appearance: none !important;
+  font-size: 18px;
+}
+
+.question:hover {
+  cursor: pointer;
+}

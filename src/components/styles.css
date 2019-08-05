@@ -1,0 +1,7 @@
+ul {
+  margin-left: 1.75rem;
+}
+
+ul li:last-child {
+  margin-bottom: 0;
+}
