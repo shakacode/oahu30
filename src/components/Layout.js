@@ -8,7 +8,6 @@ import "./styles.css"
 class Layout extends React.Component {
   render() {
     const { isHome, heading, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
     let header
 
     if (isHome) {
@@ -17,29 +16,35 @@ class Layout extends React.Component {
           <h1
             style={{
               ...scale(1.2),
-              marginBottom: rhythm(1.5),
+              marginBottom: rhythm(1),
               marginTop: 0,
             }}
           >
             {heading}
           </h1>
-          <Intro />
         </div>
       )
     } else {
       header = (
         <div>
-          <Link to={`/`}>⟵ to main</Link>
+          <Link
+            to={`/`}
+            style={{
+              position: "absolute",
+              top: "5px",
+            }}
+          >
+            ⟵ to main
+          </Link>
           <h1
             style={{
               ...scale(1.2),
-              marginBottom: rhythm(1.5),
+              marginBottom: rhythm(1),
               marginTop: 0,
             }}
           >
             {heading}
           </h1>
-          <Intro />
         </div>
       )
     }
@@ -53,7 +58,10 @@ class Layout extends React.Component {
         }}
       >
         <header>{header}</header>
-        <main>{children}</main>
+        <main>
+          {children}
+          <Intro />
+        </main>
       </div>
     )
   }

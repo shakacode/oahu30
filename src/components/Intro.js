@@ -19,7 +19,7 @@ const Intro = () => (
     <ul>
       <li>
         The official details:{" "}
-        <a href="http://www.honolulu.gov/dppstr/default.html" rel="noopener" target="_blank">
+        <a href="http://www.honolulu.gov/dppstr/default.html" rel="noopener noreferrer" target="_blank">
           http://www.honolulu.gov/dppstr/default.html
         </a>
       </li>
@@ -28,7 +28,7 @@ const Intro = () => (
         <a
           href="http://www.honolulu.gov/rep/site/dpp/str/faqs.pdf"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           http://www.honolulu.gov/rep/site/dpp/str/faqs.pdf
         </a>
@@ -37,7 +37,7 @@ const Intro = () => (
         Bill 89{" "}
         <a
           href="http://www4.honolulu.gov/docushare/dsweb/Get/Document-238476/DOC%20(37).pdf"
-          rel="noopener"
+          rel="noopener noreferrer"
           target="_blank"
         >
           http://www4.honolulu.gov/docushare/dsweb/Get/Document-238476/DOC%20(37).pdf
@@ -47,7 +47,7 @@ const Intro = () => (
         Ordinance 19-18 July 24 2019{" "}
         <a
           href="http://www.honoluludpp.org/Portals/0/LandUsePermitsDivision/STR%20FAQ%207-24.pdf"
-          rel="noopener"
+          rel="noopener noreferrer"
           target="_blank"
         >
           http://www.honoluludpp.org/Portals/0/LandUsePermitsDivision/STR%20FAQ%207-24.pdf
@@ -55,7 +55,7 @@ const Intro = () => (
       </li>
       <li>
         The discussion group{" "}
-        <a href="https://facebook.com/oahu30" target="_blank" rel="noopener">
+        <a href="https://facebook.com/oahu30" target="_blank" rel="noopener noreferrer">
           facebook.com/oahu30
         </a>
       </li>

@@ -5,3 +5,11 @@ ul {
 ul li:last-child {
   margin-bottom: 0;
 }
+
+details summary:hover {
+  cursor: pointer;
+}
+details summary {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
