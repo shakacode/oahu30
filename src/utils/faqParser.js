@@ -28,28 +28,35 @@ export const getQuesions = mdxASTChildren => {
   // between <details>...</details> tag
   let inDetails = false
 
-  let QA = {}
+  let QA = {
+    question: "",
+    answer: "",
+  }
 
   return mdxASTChildren.reduce((acc, elem) => {
     if (elem.type === "jsx" && elem.value.includes("<summary>")) {
-      QA["question"] = elem.value
-        .replace(/(<details>|<\/?summary>)/g, "")
-        .trim()
+      QA.question = elem.value.replace(/(<details>|<\/?summary>)/g, "").trim()
       inDetails = true
       return acc
     }
 
     if (elem.type === "jsx" && elem.value === "</details>") {
       inDetails = false
+      acc.push(QA)
+      QA = {
+        question: "",
+        answer: "",
+      }
       return acc
     }
 
     if ((elem.type === "list" || elem.type === "paragraph") && inDetails) {
-      QA["answer"] = parseChildren(elem.children)
+      if (QA.answer.length > 0) {
+        QA.answer += "\n"
+      }
+      QA.answer += parseChildren(elem.children)
         .replace(/\n\s*\n/g, "\n")
         .trim()
-      acc.push(QA)
-      QA = {}
       return acc
     }
 
