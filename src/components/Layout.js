@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
-import Intro from "./Intro"
 import "./styles.css"
 
 class Layout extends React.Component {
@@ -58,10 +57,7 @@ class Layout extends React.Component {
         }}
       >
         <header>{header}</header>
-        <main>
-          {children}
-          <Intro />
-        </main>
+        <main>{children}</main>
       </div>
     )
   }
