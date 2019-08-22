@@ -3,6 +3,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "./Layout"
 import SEO from "./Seo"
+import NewsletterForm from "./NewsletterForm"
 
 class Faq extends React.Component {
   render() {
@@ -18,6 +19,15 @@ class Faq extends React.Component {
     return (
       <Layout heading={heading}>
         <SEO title={title} description={description} questions={questions} />
+        <div
+          style={{
+            float: "right",
+            width: "50%",
+            margin: "0 0 15px 15px",
+          }}
+        >
+          <NewsletterForm />
+        </div>
         <MDXRenderer>{body}</MDXRenderer>
         <div
           style={{

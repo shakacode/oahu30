@@ -1,0 +1,39 @@
+.formBlock {
+  padding: 30px;
+  border: 3px solid #aeacfc;
+  border-radius: 5px;
+  background-color: #f1f4ff;
+  margin-bottom: 30px;
+}
+
+.blockTitle {
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.formBlock p {
+  margin: 0;
+  text-align: center;
+}
+
+.formBlock input {
+  width:100%;
+  margin: 3px 0;
+}
+
+.formBlock button {
+  width:100%;
+  margin-top: 5px;
+  background-color: #aeacfc;
+  color: #fff;
+  border: 1px solid #8a87e4;
+}
+
+button:disabled,
+button[disabled]{
+  opacity: 0.5;
+}
+
+input.notValidInput {
+  border: 2px solid #e81f1f;
+}
