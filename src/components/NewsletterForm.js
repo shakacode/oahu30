@@ -20,10 +20,10 @@ class NewsletterForm extends React.Component {
   handleSubmit = () => {
     if (this.isValidEmail(this.state.email) && !!this.state.name) {
       axios.post(
-        `https://api.mailerlite.com/api/v1/subscribers/${process.env.MAILERLITE_GROUP_ID}`,
+        `https://api.mailerlite.com/api/v1/subscribers/${process.env.GATSBY_MAILERLITE_GROUP_ID}`,
         {
-          apiKey: process.env.MAILERLITE_KEY,
-          id: process.env.MAILERLITE_GROUP_ID,
+          apiKey: process.env.GATSBY_MAILERLITE_KEY,
+          id: process.env.GATSBY_MAILERLITE_GROUP_ID,
           name: this.state.name,
           email: this.state.email,
         },
