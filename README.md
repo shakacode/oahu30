@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ea461f0b-a750-4a15-be0c-67afd3a89a16/deploy-status)](https://app.netlify.com/sites/dreamy-brattain-dc005b/deploys)
+
 # oahu30
 Source for oahu30.com
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
