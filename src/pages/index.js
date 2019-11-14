@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import Intro from "../components/Intro"
+import NewsletterForm from "../components/NewsletterForm"
 
 class Index extends React.Component {
   render() {
@@ -13,17 +14,34 @@ class Index extends React.Component {
     return (
       <Layout isHome heading={siteTitle}>
         <SEO title={siteTitle} description={`todo`} />
-        <ul>
-          <li>
-            <Link to="/faq-for-hosts">FAQ for Hosts</Link>
-          </li>
-          <li>
-            <Link to="/faq-for-guests">FAQ for Guests</Link>
-          </li>
-          <li>
-            <Link to="/faq-for-businesses">FAQ for Businesses</Link>
-          </li>
-        </ul>
+        <div
+          style={{
+            display: "flex"
+          }}
+        >
+          <ul
+            style={{
+              flex: "0 1 100%"
+            }}
+          >
+            <li>
+              <Link to="/faq-for-hosts">FAQ for Hosts</Link>
+            </li>
+            <li>
+              <Link to="/faq-for-guests">FAQ for Guests</Link>
+            </li>
+            <li>
+              <Link to="/faq-for-businesses">FAQ for Businesses</Link>
+            </li>
+          </ul>
+          <div
+            style={{
+              flex: "0 1 100%"
+            }}
+          >
+            <NewsletterForm />
+          </div>
+        </div>
         <Intro body={introBody} />
       </Layout>
     )

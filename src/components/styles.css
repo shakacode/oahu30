@@ -2,6 +2,10 @@ ul {
   margin-left: 1.75rem;
 }
 
+img {
+  margin: 0;
+}
+
 ul li:last-child {
   margin-bottom: 0;
 }
@@ -12,4 +16,5 @@ details summary:hover {
 details summary {
   font-weight: bold;
   margin-bottom: 10px;
+  outline: none;
 }

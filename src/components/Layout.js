@@ -3,6 +3,10 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 import "./styles.css"
+import css from "./Layout.module.css"
+
+import facebook from "../../content/facebook.png"
+import linkedin from "../../content/linkedin.png"
 
 class Layout extends React.Component {
   render() {
@@ -58,6 +62,10 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
+        <div className={css.socialLinks}>
+          <a href="https://facebook.com/oahu30" target="_blank" rel="noopener noreferrer"><img src={facebook} alt="Facebook" /></a>
+          <a href="https://www.linkedin.com/groups/13743909/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="Linkedin" /></a>
+        </div>
       </div>
     )
   }

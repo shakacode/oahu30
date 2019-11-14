@@ -1,0 +1,21 @@
+.socialLinks {
+  position: fixed;
+  width: 50px;
+  left: -20px;
+  top: 50%;
+  margin-top: -50px;
+}
+
+.socialLinks:hover {
+  transition: 0.1s;
+  left: -5px;
+}
+
+.socialLinks a {
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.socialLinks img:last-child {
+  margin-top: -10px;
+}
